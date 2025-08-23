@@ -139,7 +139,7 @@ a {
 .player-choice {
     height: 50%;
     width: 100%;
-}
+} 
 
 .player-win {
     animation: blinker1 2s infinite;

@@ -16,7 +16,7 @@ const SCISSORS_IMAGE_UNICODE = '&#9996;';
 const NUMBER_OF_HANDS = 3;
 const PLAYER_ONE = 1;
 const PLAYER_TWO = 2;
-const TIE = 0;
+const TIE = 0; 
 
 let playerHand = '';
 let computerHand = '';
@@ -58,7 +58,7 @@ function getRandomIntInclusive(min, max) {
 
 function getComputerHandInt(handsAvailable) {
     return getRandomIntInclusive(1, NUMBER_OF_HANDS);
-}
+} 
 
 function assignIntToHandType(intValue) {
     switch (intValue) {
