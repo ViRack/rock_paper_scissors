@@ -1,0 +1,181 @@
+@import 'meyer-reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --purple-color: #F1D3F2;
+    --light-blue-color:#C8EAFC;
+    --aqua-blue-color: #C5F5F5;
+    --light-green-color: #C3F6E0;
+    --dark-yellow-color: #FFEBC2;
+    --light-yellow-color: #FFF7B4;
+
+    --step--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
+    --step--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
+    --step-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+    --step-1: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
+    --step-2: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
+    --step-3: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
+    --step-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
+    --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
+}
+
+body {
+    background-color: var(--light-yellow-color);
+    height: 100vh;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}   
+
+.primary-font {
+    font-size: var(--step-5);
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.secondary-font {
+    font-size: var(--step-4);
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.tertiary-font {
+    font-size: var(--step-1);
+    color: var(--secondary-text-color);
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.quaternary-font {
+    font-size: var(--step-0);
+    color: var(--secondary-text-color);
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.flex {
+    display: flex;
+}
+
+/* CONTAINER =================================== */
+
+.container {
+    flex-direction: column;
+    padding: .1rem 1rem;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+} 
+
+/* NAV ============================================ */
+
+.nav-logo {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: var(--step-4);
+}
+
+/* MAIN ============================================ */
+
+.game-field {
+    width: 90%;
+    height: 45%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--aqua-blue-color);
+    border-radius: 15px;
+    max-width: 250px;
+    min-height: 150px;
+}
+
+.field-font {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.split {
+    height: 5px;
+    background-color: var(--purple-color);
+    width: 80%;
+}
+
+/* CHOICES ====================================== */
+
+.choices {
+    background-color: var(--aqua-blue-color);
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius: 15px;
+    padding: .5rem;
+    width: 90%;
+    max-width: 400px;
+}
+
+.choice {
+    border: 5px solid var(--purple-color);
+    padding: .5rem;
+    border-radius: 15px;
+}
+
+.choice:hover {
+    filter:brightness(75%);
+}
+
+.player-choice {
+    height: 50%;
+}
+
+.computer-choice {
+    height: 50%;
+}
+
+/* SCORES ============================================ */
+
+.scores {
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.reset-button {
+    background-color: #F1D3F2;
+    font-weight: 500;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.reset-button:hover {
+    filter:brightness(75%)
+}
+
+/* FOOTER ========================================= */
+
+.footer {
+    padding-bottom: 1rem;
+}
+
+.links {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+}
+
+.link:hover {
+    color: black;
+    font-weight: 300;
+}
