@@ -45,6 +45,11 @@ CHOICE.forEach(element => {
     });
 });
 
+RESET_SCORE_BUTTON.addEventListener('click', () => {
+    resetScores();
+})
+
+
 function getRandomIntInclusive(min, max) {
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);
@@ -168,7 +173,7 @@ function incrementScore(newWinner) {
         ties += 1;
         TIE_SCORE.innerHTML = ties;
         console.log(ties);
-        if (isLocalStorageSupported) {
+        if (isLocalStorageSupported()) {
             localStorage.setItem('ties', JSON.stringify(ties));
             console.log("ties saved successfully");
         }
@@ -182,7 +187,7 @@ function isLocalStorageSupported() {
 }
 
 function pullLocalScores() {
-    if (isLocalStorageSupported === true) {
+    if (isLocalStorageSupported() === true) {
         const SAVED_WINS = localStorage.getItem('wins');
         const SAVED_LOSSES = localStorage.getItem('losses');
         const SAVED_TIES = localStorage.getItem('ties');
@@ -191,20 +196,39 @@ function pullLocalScores() {
 
         if (SAVED_WINS) {
             wins = JSON.parse(SAVED_WINS);
+            WIN_SCORE.innerHTML = wins;
             console.log("wins retrieved successfully");
         }
 
         if (SAVED_LOSSES) {
             losses = JSON.parse(SAVED_LOSSES);
+            LOSS_SCORE.innerHTML = losses;
             console.log("losses retrieved successfully");
         }
 
-        if (saved-ties) {
-            losses = JSON.parse(SAVED_TIES);
+        if (SAVED_TIES) {
+            ties = JSON.parse(SAVED_TIES);
+            TIE_SCORE.innerHTML = ties;
             console.log("ties retrieved successfully");
         }
 
     } else {
         console.log("LOCAL STORAGE NOT SUPPORTED");
+    }
+}
+
+function resetScores() {
+    if (isLocalStorageSupported()) {
+        wins = 0;
+        losses = 0;
+        ties = 0;
+
+        localStorage.setItem('wins', JSON.stringify(wins));
+        localStorage.setItem('losses', JSON.stringify(losses));
+        localStorage.setItem('ties', JSON.stringify(ties));
+        
+        WIN_SCORE.innerHTML = wins;
+        LOSS_SCORE.innerHTML = losses;
+        TIE_SCORE.innerHTML = ties;
     }
 }
