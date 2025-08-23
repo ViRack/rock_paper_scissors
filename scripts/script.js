@@ -27,6 +27,8 @@ let losses = 0;
 let ties = 0;
 
 
+pullLocalScores();
+
 CHOICE.forEach(element => {
     element.addEventListener('click', () => {
 
@@ -151,12 +153,58 @@ function incrementScore(newWinner) {
     if (newWinner === PLAYER_ONE) {
         wins += 1;
         WIN_SCORE.innerHTML = wins;
+        if (isLocalStorageSupported) {
+            localStorage.setItem('wins', JSON.stringify(wins));
+            console.log("wins saved successfully");
+        }
     } else if (newWinner === PLAYER_TWO) {
         losses += 1;
         LOSS_SCORE.innerHTML = losses;
+        if (isLocalStorageSupported) {
+            localStorage.setItem('losses', JSON.stringify(losses));
+            console.log("losses saved successfully");
+        }
     } else if (newWinner === TIE) {
         ties += 1;
         TIE_SCORE.innerHTML = ties;
         console.log(ties);
+        if (isLocalStorageSupported) {
+            localStorage.setItem('ties', JSON.stringify(ties));
+            console.log("ties saved successfully");
+        }
+    }
+}
+
+function isLocalStorageSupported() {
+    if (localStorage) return true;
+
+    return false;
+}
+
+function pullLocalScores() {
+    if (isLocalStorageSupported === true) {
+        const SAVED_WINS = localStorage.getItem('wins');
+        const SAVED_LOSSES = localStorage.getItem('losses');
+        const SAVED_TIES = localStorage.getItem('ties');
+
+        console.log (SAVED_WINS, SAVED_LOSSES, SAVED_TIES);
+
+        if (SAVED_WINS) {
+            wins = JSON.parse(SAVED_WINS);
+            console.log("wins retrieved successfully");
+        }
+
+        if (SAVED_LOSSES) {
+            losses = JSON.parse(SAVED_LOSSES);
+            console.log("losses retrieved successfully");
+        }
+
+        if (saved-ties) {
+            losses = JSON.parse(SAVED_TIES);
+            console.log("ties retrieved successfully");
+        }
+
+    } else {
+        console.log("LOCAL STORAGE NOT SUPPORTED");
     }
 }
