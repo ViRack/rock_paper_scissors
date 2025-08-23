@@ -8,7 +8,7 @@
     --purple-color: #F1D3F2;
     --light-blue-color:#C8EAFC;
     --aqua-blue-color: #C5F5F5;
-    --light-green-color: #C3F6E0;
+    --light-green-color: #7aecbb;
     --dark-yellow-color: #FFEBC2;
     --light-yellow-color: #FFF7B4;
 
@@ -138,6 +138,28 @@ a {
 
 .player-choice {
     height: 50%;
+    width: 100%;
+}
+
+.player-win {
+    animation: blinker1 2s infinite;
+}
+
+.player-loss {
+    animation: blinker2 2s infinite;
+
+}
+
+@keyframes blinker1 {
+    50% {
+        background-color: var(--light-green-color);
+    }
+}
+
+@keyframes blinker2 {
+    50% {
+        background-color: var(--purple-color);
+    }
 }
 
 .computer-choice {
