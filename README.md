@@ -25,7 +25,7 @@ It started as a console-based program and was later enhanced with a mobile-first
 - Visual feedback: green flash for a win, red flash for a loss  
 - Git branching workflow: developed the UI in a feature branch and rebased into main  
 
-## 📸 Preview
+## Preview
 
 <p align="center">
   <img src="assets/mobile-view.png" alt="Mobile preview" height="400" style="margin-right:20px;">
